@@ -5,7 +5,11 @@ const Button = ({item, funcToUpdate, text}) => {
 }
 
 const StatisticsLine = ({text, value}) => {
-  return (<p>{text} {value}</p>)
+  return (
+  <tr>
+    <td>{text}</td> 
+    <td>{value}</td>
+  </tr>)
 }
 
 const Statistics = ({good, neutral, bad}) => {
@@ -15,21 +19,16 @@ const Statistics = ({good, neutral, bad}) => {
   }
   let score = good - bad
   return (
-    <div>
-      {/* <p>good {good}</p>
-      <p>neutral {neutral}</p>
-      <p>bad {bad}</p>
-      <p>all {combined} </p>
-      <p>average {score/combined}</p>
-      <p>positive {(good/combined)*100} %</p> */}
-
-      <StatisticsLine text="good" value={good}/>
-      <StatisticsLine text="neutral" value={neutral}/>
-      <StatisticsLine text="bad" value={bad}/>
-      <StatisticsLine text="combined" value={combined}/>
-      <StatisticsLine text="average" value={score/combined}/>
-      <StatisticsLine text="positive" value={(good/combined)*100 + "%"}/>
-    </div>
+    <table>
+      <tbody>
+        <StatisticsLine text="good" value={good}/>
+        <StatisticsLine text="neutral" value={neutral}/>
+        <StatisticsLine text="bad" value={bad}/>
+        <StatisticsLine text="combined" value={combined}/>
+        <StatisticsLine text="average" value={score/combined}/>
+        <StatisticsLine text="positive" value={(good/combined)*100 + "%"}/>
+      </tbody>
+    </table>
   )
 }
 
