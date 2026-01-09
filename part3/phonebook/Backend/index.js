@@ -19,7 +19,8 @@ morgan.token('body', function getBody (req) {
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms :body'));
 
 app.get("/", (request, response) => {
-    response.send("<h1>Persons API</h1>");
+    const reply = "<h1>Phonebook Backend</h1><br/><h3>Use the /api/persons endpoint to access the phonebook data.</h3>";
+    response.send(reply);
 });
 
 app.get("/api/persons", (request, response) => {
