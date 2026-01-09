@@ -8,7 +8,7 @@ const App = () => {
   const [notes, setNotes] = useState([])
   const [newNote, setNewNote] = useState('a new note...')
   const [showAll, setShowAll] = useState(true)
-  const [errorMessage, setErrorMessage] = useState('some error happened...')
+  const [errorMessage, setErrorMessage] = useState(null)
 
   useEffect(() => {
     noteService
@@ -32,6 +32,7 @@ const App = () => {
       .create(noteObject)
       .then(response => {
         setNotes(notes.concat(response))
+        console.log("ADDED ", response)
         setNewNote('')
       })
   }
