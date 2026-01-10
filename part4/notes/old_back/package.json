@@ -1,0 +1,23 @@
+{
+    "name": "backend",
+    "version": "0.0.1",
+    "description": "",
+    "license": "MIT",
+    "author": "Andrew Baruch",
+    "type": "commonjs",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "dev": "node --watch index.js",
+        "test": "echo \"Error no test specified\" && exit 1"
+    },
+    "dependencies": {
+        "cors": "^2.8.5",
+        "dotenv": "^17.2.3",
+        "express": "^5.2.1",
+        "mongoose": "^9.1.2"
+    },
+    "devDependencies": {
+        "prettier": "^3.7.4"
+    }
+}
